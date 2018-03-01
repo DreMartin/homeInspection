@@ -1,12 +1,24 @@
 .auth-container { 
-    margin-top: 5em;
-    padding: 2em;
-    border: 1px solid #e5e5e5;
+    margin-top: 10em;
+    margin-bottom: 20em;
+    padding: 5em;
+    border: 3px solid maroon;
     border-radius: 0.4em;
     box-shadow: 2px 4px 20px #f0f0f0;
+    background-color: rgba(248, 212, 146, 0.418);
 }
 
-.login-col {
-    border-left: 1px solid black;
+.logSignText {
+    color: white;
 }
+
+.loginh1 {
+    color: rgb(85, 200, 200);
+}
+
+.signUph1 {
+    color: rgb(85, 200, 200);
+}
+
+
 

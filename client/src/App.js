@@ -11,11 +11,13 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      sessionToken: ''
+      sessionToken: '',
+      // userData: '',
     }
 
     this.setSessionState = this.setSessionState.bind(this);
     this.protectedViews = this.protectedViews.bind(this);
+    // this.setUserState = this.setUserState.bind(this);
     this.logout = this.logout.bind(this);
   }
 
@@ -25,6 +27,12 @@ class App extends Component {
 
   }
 
+  // setUserState(user) {
+  //   localStorage.setItem('userData', user)
+  //   this.setState({userData: user })
+  //   console.log(userData);
+  // }
+
   componentWillMount() {
     const token = localStorage.getItem('token')
 
@@ -33,7 +41,7 @@ class App extends Component {
     }
   }
 
-  logout(){
+  logout() {
     this.setState({ sessionToken: '' });
     localStorage.removeItem('token');
   }
@@ -58,12 +66,13 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
-        <div>
-          <SiteBar clickLogout={this.logout}/>
-          {this.protectedViews()}
-        </div>
-      </Router>
+        <Router>
+          <div>
+            <SiteBar clickLogout={this.logout} />
+            {this.protectedViews()}
+          </div>
+        </Router>
+
 
     );
   }

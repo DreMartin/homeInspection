@@ -1,0 +1,28 @@
+username_div {
+    position: absolute;
+    margin-left: 30px;
+    color: pink;
+}
+
+.dashboardText {
+    color: teal;
+    text-shadow: 2px 1px black;
+    text-align: left;
+    margin-top: 20px;
+}
+
+#reportcol { 
+    margin-top: 25px;
+    background-color: lightgrey;
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+}
+
+.createReportCol {
+    margin-top: 25px;
+    background-color: lightgrey;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+}

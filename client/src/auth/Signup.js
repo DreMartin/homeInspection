@@ -51,36 +51,27 @@ class Signup extends Component {
         const submitHandler = !this.state.username ? this.validateSignUp : this.handleSubmit
         return (
             <div>
-                <h1>Sign Up</h1>
-                <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus repellat, atque nulla, soluta vero reprehenderit numquam incidunt, rem quaerat quos voluptatum perferendis. Distinctio culpa iste atque blanditiis placeat qui ipsa?</h6>
+                <h1 className="signUph1">Sign Up</h1>
                 <Form onSubmit={submitHandler} >
                     <FormGroup>
-                        <Label for="username">username</Label>
+                        <Label  className="logSignText" for="username">Username</Label>
                         <Input id="username" type="text" name="username" placeholder="enter username" onChange={this.handleChange} />
                         {this.state.errorMessage && <span className="error">user name is required</span>}
                     </FormGroup>
                     <FormGroup>
-                        <Label for="password">Password</Label>
+                        <Label className="logSignText" for="password">Password</Label>
                         <Input id="su_password" type="password" name="password" placeholder="enter password" onChange={this.handleChange} />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="email">email</Label>
+                        <Label className="logSignText" for="email">Email</Label>
                         <Input id="su_email" type="email" name="email" placeholder="enter your email" onChange={this.handleChange} />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="phone">Phone</Label>
-                        <Input id="su_phone" type="number" name="phone" onChange={this.handleChange} />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="company">Company</Label>
+                        <Label className="logSignText" for="company">Company</Label>
                         <Input id="su_company" type="text" name="company" onChange={this.handleChange} />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="address">Address</Label>
-                        <Input id="su_address" type="text" name="address" onChange={this.handleChange} />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="license">Inspector Licence #</Label>
+                        <Label className="logSignText" for="license">Inspector Licence #</Label>
                         <Input id="su_license" type="text" name="license" onChange={this.handleChange} />
                     </FormGroup>
                     <Button type="submit"> Submit </Button>

@@ -1,4 +1,7 @@
 import React from 'react';
+import styled from 'styled-components';
+// import * as FontAwesome from 'react-icons/fa';
+// import FaRa from 'react-icons/fa/ra';
 import {
     Collapse,
     Navbar,
@@ -9,6 +12,12 @@ import {
     NavLink,
     Button
 } from 'reactstrap';
+
+const Wrapper = styled.div`
+background: #FF6700;
+text-alignment: left;
+`
+
 
 class SiteBar extends React.Component {
     constructor(props) {
@@ -27,22 +36,23 @@ class SiteBar extends React.Component {
     }
     render() {
         return (
-            <div>
+            <Wrapper>
                 <Navbar color="faded"  light expand="md">
-                    <NavbarBrand href="/">Sample Auth App</NavbarBrand>
+                    <NavbarBrand href='<FaRa/>'></NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
-                                <Button onClick={() => this.props.clickLogout()}>Logout</Button>
+                                <NavLink href="#">Home</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="https://github.com/">Github</NavLink>
+                                <NavLink href="#" onClick={() => this.props.clickLogout()}>Logout</NavLink>
                             </NavItem>
+                            <h3 id="navTitle" >Home Inspection</h3>
                         </Nav>
                     </Collapse>
                 </Navbar>
-            </div>
+            </Wrapper>
         );
     }
 

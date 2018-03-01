@@ -1,55 +1,32 @@
+/* eslint react/no-multi-comp: 0, react/prop-types: 0 */
+
 import React from 'react';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
+class ReportEdit extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      modal: false
+    };
 
-class ReportCreate extends React.Component {
+    this.toggle = this.toggle.bind(this);
+  }
 
-    constructor(props) {
-        super(props)
+  toggle() {
+    this.setState({
+      modal: !this.state.modal
+    });
+  }
 
-        this.state = {
-            result: '',
-            description: '',
-            def: ''
-        };
-
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-
-    }
-
-    handleChange(event) {
-        this.setState({
-            [event.target.name]: event.target.value
-        })
-    }
-
-
-    handleSubmit(event) {
-        event.preventDefault();
-
-        fetch("http://localhost:3000/api/report", {
-            method: 'POST',
-            body: JSON.stringify({ report: this.state }),
-            headers: new Headers({
-                'Content-Type': 'application/json',
-                'Authorization': this.props.token
-            })
-        })
-            .then((res) => res.json())
-            .then((reportData) => {
-                this.props.updateReportsArray()
-                // this is where you would clear out the fields 
-            })
-    }
-
-    render() {
-        return (
-            <div className="split right">
-            <div className="createReportCol">
-                <h3>Create your new report</h3>
-                <hr />
-                <Form hover striped onSubmit={this.handleSubmit} >
+  render() {
+    return (
+      <div>
+        <Button color="" onClick={this.toggle}>Update</Button>
+        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+          <ModalHeader toggle={this.toggle}>View/Edit your report</ModalHeader>
+          <ModalFooter>
+          {/* <Form hover striped onSubmit={this.handleSubmit} >
                     <FormGroup>
                         <Label for="clientName">Client</Label>
                         <Input id="clientName" type="text" name="clientName" onChange={this.handleChange} />
@@ -91,11 +68,14 @@ class ReportCreate extends React.Component {
                         <Input id="electricalNotes" type="text" name="electricalNotes" onChange={this.handleChange} />
                     </FormGroup>
                     <Button type="submit" color="primary"> Submit </Button>
-                </Form>
-                </div>
-            </div>
-        )
-    }
+                </Form> */}
+            {/* <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
+            <Button color="secondary" onClick={this.toggle}>Cancel</Button> */}
+          </ModalFooter>
+        </Modal>
+      </div>
+    );
+  }
 }
 
-export default ReportCreate;
+export default ReportEdit;

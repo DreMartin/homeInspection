@@ -1,14 +1,16 @@
 import React from 'react';
 import moment from 'moment';
 import { Table, Button } from 'reactstrap';
+import ReportEdit from './ReportEdit';
 
 
 const ReportTable = (props) => {
 
     
     return (
-        <div>
-            <h3>History</h3>
+        <div className="split left">
+        <div className="centered">
+            <h3>My reports</h3>
             <hr />
             <Table hover striped>
                 <thead>
@@ -28,6 +30,7 @@ const ReportTable = (props) => {
                                     <th scope="row">{report.id}</th>
                                     <td>{report.clientName}</td>
                                     <td>{moment(date).format('MM-DD-YYYY')}</td>
+                                    <td><ReportEdit> <Button id={report.id} onClick={props.get} color="">View/Edit</Button></ReportEdit></td>
                                     <td><Button id={report.id} onClick={props.delete} color="danger">Delete</Button></td>
                                 </tr>
                             )
@@ -35,6 +38,7 @@ const ReportTable = (props) => {
                     }
                 </tbody>
             </Table>
+            </div>
         </div>
     );
 }

@@ -19,14 +19,16 @@ class Auth extends React.Component {
     signup(e) {
         if (this.state.showSignup === false) {
             return (
-                <Col md="12" className="login-col">
-                    <Login setToken={this.props.setToken} />
+                <Col md="10" className="login-col">
+                    <Login setToken={this.props.setToken}/>
+                    <p>Not a user yet? Click <button onClick={this.signupState}>here</button> to Sign Up</p>
                 </Col>
             )
         } else {
             return (
-                <Col md="12">
+                <Col md="10">
                     <Signup setToken={this.props.setToken} />
+                    <p>Already have an account? Click <button onClick={this.signupState}>here</button> to Log In</p>;
                 </Col>
             )
         }
@@ -44,7 +46,6 @@ class Auth extends React.Component {
             <Container className="auth-container" >
                 <Row>
                     {this.signup()}
-                    <p>Not a user yet? Click <button onClick={this.signupState}>here</button> to Sign Up</p>
                 </Row>
             </Container>
         )

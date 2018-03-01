@@ -26,3 +26,13 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+#root {
+  background: blueviolet;
+  background-image: url('https://imgur.com/VIB73GG');
+}
+
+.auth-container.container {
+  border-radius: 35px;
+  border: 2px black;
+}

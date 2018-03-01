@@ -31,6 +31,8 @@ class Login extends Component {
             (response) => response.json()
         ).then((data) => {
             this.props.setToken(data.sessionToken)
+            console.log(data);
+            
 
         }) 
         event.preventDefault()
@@ -39,16 +41,15 @@ class Login extends Component {
     render() {
         return (
 
-            <div>
-                <h1>Login</h1>
-                <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus repellat, atque nulla, soluta vero reprehenderit numquam incidunt, rem quaerat quos voluptatum perferendis. Distinctio culpa iste atque blanditiis placeat qui ipsa?</h6>
+            <div id="loginDiv">
+                <h1 className="loginh1">Login</h1>
                 <Form onSubmit={this.handleSubmit} >
                     <FormGroup>
-                        <Label for="username">Username</Label>
+                        <Label className="logSignText" for="username">Username</Label>
                         <Input id="li_username" type="text" name="username" placeholder="enter username" onChange={this.handleChange} />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="password">Password</Label>
+                        <Label  className="logSignText" for="password">Password</Label>
                         <Input id="li_password" type="password" name="password" placeholder="enter password" onChange={this.handleChange} />
                     </FormGroup>
                     <Button type="submit"> Submit </Button>
